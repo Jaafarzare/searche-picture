@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -54,8 +55,7 @@ export default function PhotoGallery({
               <div key={photo.id} className="relative group">
                 <img
                   onClick={() => setSelectedPhoto(photo)}
-                  src={photo.src?.medium || photo.src}
-                  alt={photo.photographer || "تصویر"}
+                  src={photo.src.medium}
                   className="w-full h-48 object-cover rounded-lg shadow-md hover:cursor-pointer dark:shadow-gray-700 hover:shadow-xl dark:hover:shadow-gray-800 transition-shadow duration-300"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-70 transition-opacity flex flex-col justify-end p-3 text-white pointer-events-none">
