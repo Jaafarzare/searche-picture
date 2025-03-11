@@ -1,5 +1,4 @@
 import { ModeToggle } from "./ModeToggle";
-import Search from "./Search";
 
 export default function SideNav() {
   return (

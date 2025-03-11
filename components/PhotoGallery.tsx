@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { PhotoGallerySkeleton } from "./PhotoGallerySkeleton";
 
 interface PhotoGalleryProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   photos: any[];
   hasSearched: boolean;
   loading: boolean;

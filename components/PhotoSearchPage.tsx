@@ -12,6 +12,7 @@ import Search from "@/components/Search";
  */
 export default function PhotoSearchPage() {
   // Array of fetched photos
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [photos, setPhotos] = useState<any[]>([]);
   // Flag indicating whether a search has been executed
   const [hasSearched, setHasSearched] = useState(false);
