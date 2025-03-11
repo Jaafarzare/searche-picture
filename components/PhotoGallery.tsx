@@ -4,9 +4,17 @@
 import { useState, useEffect, useRef } from "react";
 import { PhotoGallerySkeleton } from "./PhotoGallerySkeleton";
 
+interface Photo {
+  id: string;
+  src: {
+    medium: string;
+    original: string;
+  };
+  photographer: string;
+}
+
 interface PhotoGalleryProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  photos: any[];
+  photos: Photo[];
   hasSearched: boolean;
   loading: boolean;
 }
@@ -16,7 +24,7 @@ export default function PhotoGallery({
   hasSearched,
   loading,
 }: PhotoGalleryProps) {
-  const [selectedPhoto, setSelectedPhoto] = useState<any | null>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // اسکرول به انتهای container زمانی که تصاویر تغییر می‌کنند و بارگذاری به پایان رسیده است
