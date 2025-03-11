@@ -36,14 +36,7 @@ export default function PhotoSearchPage() {
     setLoading(true);
     try {
       const currentPage = reset ? 1 : page;
-      const res = await fetch(
-        `https://api.pexels.com/v1/search?query=${query}&per_page=10&page=${currentPage}`,
-        {
-          headers: {
-            Authorization: process.env.NEXT_PUBLIC_PEXELS_API_KEY!,
-          },
-        }
-      );
+      const res = await fetch(`/api/pexels?query=${query}&page=${currentPage}`);
 
       if (!res.ok) {
         throw new Error("Error fetching photos.");
